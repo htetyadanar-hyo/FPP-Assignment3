@@ -61,16 +61,16 @@ public class Customer {
     public static void main(String[] args) {
         Customer[] myCustomers = new Customer[3];
         Customer c1 = new Customer("Jame","Jone","12345");
-        c1.setBillingAddress(new Address("1000","Chicago","1111"));
-        c1.setShippingAddress(new Address("2000","Iowa","1102"));
+        c1.setBillingAddress(new Address("1000","Chicago","Chicago","1111"));
+        c1.setShippingAddress(new Address("2000","Iowa","Iowa","1102"));
 
         Customer c2 = new Customer("Lily","Jim","12780");
-        c2.setBillingAddress(new Address("2122","FairField","52557"));
-        c2.setShippingAddress(new Address("3000","Mount Pleasant","52553"));
+        c2.setBillingAddress(new Address("2122","FairField","Iowa","52557"));
+        c2.setShippingAddress(new Address("3000","Mount Pleasant","Iowa","52553"));
 
         Customer c3 = new Customer("Nick","Min","12999");
-        c3.setBillingAddress(new Address("2123","Chicago","1292"));
-        c3.setShippingAddress(new Address("2123","New York","1292"));
+        c3.setBillingAddress(new Address("2123","Chicago","Chicago","1292"));
+        c3.setShippingAddress(new Address("2123","New York","New York","1292"));
 
         myCustomers[0] = c1;
         myCustomers[1] = c2;
@@ -89,11 +89,13 @@ class Address {
 
     String street;
     String city;
+    String state;
     String zip;
 
-    Address(String street,String city,String zip){
+    Address(String street,String city,String state,String zip){
         this.street = street;
         this.city = city;
+        this.state = state;
         this.zip = zip;
     }
 
