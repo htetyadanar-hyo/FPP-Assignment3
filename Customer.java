@@ -56,9 +56,29 @@ public class Customer {
 
     Address getShippingAddress(){
         return shippingAddress;
+    }   
+
+}
+class Address {
+
+    String street;
+    String city;
+    String state;
+    String zip;
+
+    Address(String street,String city,String state,String zip){
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
     }
 
-    public static void main(String[] args) {
+    String getCity(){
+        return city;
+    }
+}
+class Main{
+     public static void main(String[] args) {
         Customer[] myCustomers = new Customer[3];
         Customer c1 = new Customer("Jame","Jone","12345");
         c1.setBillingAddress(new Address("1000","Chicago","Chicago","1111"));
@@ -82,24 +102,5 @@ public class Customer {
             }
         }
 
-    }
-
-}
-class Address {
-
-    String street;
-    String city;
-    String state;
-    String zip;
-
-    Address(String street,String city,String state,String zip){
-        this.street = street;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-    }
-
-    String getCity(){
-        return city;
     }
 }
